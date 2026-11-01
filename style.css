@@ -1,0 +1,111 @@
+/* ===== Design tokens ===== */
+:root {
+  --bg: #f3f5f2;
+  --surface: #ffffff;
+  --text: #1c2522;
+  --muted: #4d5a55;
+  --accent: #0f5c4d;     /* deep green ink */
+  --accent-2: #e0a526;   /* saffron highlight */
+  --line: #cfd8d3;
+  --radius: 6px;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Iowan Old Style", Georgia, "Times New Roman", serif;
+}
+[data-theme="dark"] {
+  --bg: #141a18;
+  --surface: #1d2623;
+  --text: #e9efec;
+  --muted: #a9b8b1;
+  --accent: #6fd3b8;
+  --line: #34423d;
+}
+
+/* ===== Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { margin: 0; font-family: var(--font-body); line-height: 1.6; background: var(--bg); color: var(--text); }
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; }
+h1 { font-size: clamp(2rem, 6vw, 3.4rem); margin: 0 0 1rem; }
+h2 { font-size: 2rem; margin: 0 0 1.5rem; }
+a { color: var(--accent); }
+section { max-width: 62rem; margin: 0 auto; padding: 4rem 1.25rem; }
+p { max-width: 65ch; }
+
+:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+.skip-link { position: absolute; left: -999px; background: var(--accent); color: #fff; padding: .5rem 1rem; }
+.skip-link:focus { left: 1rem; top: 1rem; z-index: 100; }
+
+/* ===== Header and nav ===== */
+.progress { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: var(--accent-2); z-index: 60; }
+.site-header { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--line); }
+.nav { max-width: 62rem; margin: 0 auto; padding: .75rem 1.25rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.brand { font-family: var(--font-head); font-weight: bold; font-size: 1.4rem; text-decoration: none; margin-right: auto; }
+.nav-links { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { color: var(--text); text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a.active { border-color: var(--accent-2); }
+.nav-toggle { display: none; }
+.theme-toggle, .nav-toggle { font: inherit; background: none; color: var(--text); border: 1px solid var(--line); border-radius: var(--radius); padding: .3rem .7rem; cursor: pointer; }
+
+/* ===== Hero ===== */
+.hero { padding-top: 6rem; padding-bottom: 5rem; }
+.greeting { color: var(--muted); margin: 0 0 .5rem; }
+.typed { color: var(--accent); }
+.caret { display: inline-block; width: 3px; height: 1em; background: var(--accent-2); margin-left: 2px; vertical-align: text-bottom; animation: blink 1s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.lead { font-size: 1.15rem; color: var(--muted); }
+
+/* ===== Buttons ===== */
+.btn, .btn-small, .chip { font: inherit; cursor: pointer; border-radius: var(--radius); border: 1px solid var(--accent); }
+.btn { display: inline-block; background: var(--accent); color: var(--bg); padding: .6rem 1.2rem; text-decoration: none; margin-right: .5rem; }
+.btn-ghost { background: transparent; color: var(--accent); }
+.btn:hover { filter: brightness(1.1); }
+.btn-small { background: transparent; color: var(--accent); padding: .25rem .7rem; }
+.btn-small:hover, .chip:hover { background: var(--accent); color: var(--bg); }
+.chip { background: transparent; color: var(--text); border-color: var(--line); padding: .3rem .9rem; margin-right: .4rem; }
+.chip.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+/* ===== Projects ===== */
+.grid { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); padding: 1rem 1.25rem; border-radius: var(--radius); }
+.card[hidden] { display: none; }
+.card h3 { margin: .5rem 0; }
+.thumb { width: 100%; max-height: 5rem; color: var(--accent); }
+.tags, .status, .count { color: var(--muted); font-size: .9rem; }
+
+/* ===== About ===== */
+.about { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+.avatar { width: 9rem; color: var(--accent); }
+.skills { list-style: none; padding: 0; }
+.skills li { display: grid; grid-template-columns: 7rem 1fr; align-items: center; margin-bottom: .5rem; }
+.bar { background: var(--line); height: .6rem; border-radius: 99px; overflow: hidden; }
+.fill { height: 100%; width: 0; background: var(--accent); transition: width 1s ease; }
+.timeline { padding-left: 1.2rem; }
+.timeline strong { display: inline-block; min-width: 8rem; }
+
+/* ===== Contact form ===== */
+form { max-width: 32rem; margin-top: 1.5rem; }
+label { display: block; margin-top: 1rem; font-weight: 600; }
+input, textarea { width: 100%; font: inherit; padding: .6rem; border: 1px solid var(--muted); border-radius: var(--radius); background: var(--surface); color: var(--text); }
+input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: #b3261e; }
+.error { color: #b3261e; min-height: 1.2em; margin: .2rem 0 0; font-size: .9rem; }
+[data-theme="dark"] .error { color: #ff9a92; }
+.count { float: right; font-weight: normal; }
+
+/* ===== Misc ===== */
+footer { text-align: center; padding: 2rem 1rem; color: var(--muted); border-top: 1px solid var(--line); }
+.to-top { position: fixed; right: 1rem; bottom: 1rem; padding: .6rem .9rem; border-radius: 99px; border: 0; background: var(--accent); color: var(--bg); cursor: pointer; }
+dialog { max-width: 28rem; background: var(--surface); color: var(--text); border: 2px solid var(--accent); border-radius: var(--radius); }
+dialog::backdrop { background: rgba(0, 0, 0, .5); }
+
+/* ===== Responsive ===== */
+@media (min-width: 48rem) { .about { grid-template-columns: 10rem 1fr; } }
+@media (max-width: 40rem) {
+  .nav-toggle { display: inline-block; }
+  .nav-links { display: none; flex-direction: column; width: 100%; gap: .5rem; order: 5; }
+  .nav-links.open { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .caret { animation: none; }
+  .fill { transition: none; }
+}
