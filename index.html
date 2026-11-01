@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <meta name="description" content="Portfolio of Mohamad Irman: projects, skills and contact details.">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#home">Irman's Portfolio</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-pressed="false">Dark mode</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <p class="greeting" id="greeting">Hello</p>
+      <h1 id="hero-title">I'm Mohamad Irman, a <span id="typed" class="typed"></span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="lead">I build small, clear web projects. This site is written in plain HTML, CSS and JavaScript. Replace this line with one sentence about what you want people to remember.</p>
+      <p><a class="btn" href="#projects">See my projects</a> <a class="btn btn-ghost" href="#contact">Get in touch</a></p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="chip active" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="web" aria-pressed="false">Web</button>
+        <button class="chip" data-filter="data" aria-pressed="false">Data</button>
+        <button class="chip" data-filter="design" aria-pressed="false">Design</button>
+      </div>
+      <p class="status" id="count" aria-live="polite"></p>
+      <ul class="grid" id="projectGrid">
+        <li class="card" data-category="web">
+          <svg class="thumb" viewBox="0 0 120 60" role="img" aria-label="Sketch of a browser window"><rect x="6" y="6" width="108" height="48" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 18h108" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>Project One</h3>
+          <p>A short description of what it does and who it is for. Replace this text.</p>
+          <p class="tags">HTML, CSS</p>
+          <button class="btn-small" data-project="0">Details</button>
+        </li>
+        <li class="card" data-category="web">
+          <svg class="thumb" viewBox="0 0 120 60" role="img" aria-label="Sketch of a checklist"><path d="M20 15h80M20 30h80M20 45h80" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>Project Two</h3>
+          <p>A short description of what it does and who it is for. Replace this text.</p>
+          <p class="tags">JavaScript</p>
+          <button class="btn-small" data-project="1">Details</button>
+        </li>
+        <li class="card" data-category="data">
+          <svg class="thumb" viewBox="0 0 120 60" role="img" aria-label="Sketch of a bar chart"><path d="M25 50V30M50 50V15M75 50V35M100 50V22" stroke="currentColor" stroke-width="8"/></svg>
+          <h3>Project Three</h3>
+          <p>A short description of what it does and who it is for. Replace this text.</p>
+          <p class="tags">Data, Spreadsheets</p>
+          <button class="btn-small" data-project="2">Details</button>
+        </li>
+        <li class="card" data-category="design">
+          <svg class="thumb" viewBox="0 0 120 60" role="img" aria-label="Sketch of a colour palette"><circle cx="30" cy="30" r="14" fill="currentColor"/><circle cx="60" cy="30" r="14" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="90" cy="30" r="14" fill="currentColor" opacity=".4"/></svg>
+          <h3>Project Four</h3>
+          <p>A short description of what it does and who it is for. Replace this text.</p>
+          <p class="tags">Figma, Branding</p>
+          <button class="btn-small" data-project="3">Details</button>
+        </li>
+        <li class="card" data-category="web data">
+          <svg class="thumb" viewBox="0 0 120 60" role="img" aria-label="Sketch of a line graph"><polyline points="10,50 40,30 65,38 110,10" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+          <h3>Project Five</h3>
+          <p>A short description of what it does and who it is for. Replace this text.</p>
+          <p class="tags">JavaScript, Data</p>
+          <button class="btn-small" data-project="4">Details</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About me</h2>
+      <div class="about">
+        <!-- <svg class="avatar" viewBox="0 0 120 120" role="img" aria-label="YZ"><circle cx="60" cy="60" r="58" fill="currentColor" opacity=".15"/><text x="60" y="73" text-anchor="middle" font-size="40" fill="currentColor" font-family="Georgia, serif">YN</text></svg> -->
+        <img class="avatar" src="photo.jpg" alt="Photo of Your Name smiling at the camera" width="144" height="144">
+        <div>
+          <p>Write two or three sentences in your own words: where you study, what you enjoy building and what you want to learn next.</p>
+          <h3>Skills</h3>
+          <ul class="skills" id="skills">
+            <li data-level="80"><span>HTML</span><div class="bar"><div class="fill"></div></div></li>
+            <li data-level="70"><span>CSS</span><div class="bar"><div class="fill"></div></div></li>
+            <li data-level="60"><span>JavaScript</span><div class="bar"><div class="fill"></div></div></li>
+          </ul>
+          <h3>Experience and education</h3>
+          <ol class="timeline">
+            <li><strong>2024 to now</strong> Your course, Your university</li>
+            <li><strong>2025</strong> Internship, club role or part-time job</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email me at <a href="mailto:you@example.com" id="emailLink">you@example.com</a> <button class="btn-small" id="copyEmail" type="button">Copy address</button></p>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+        <p class="error" id="nameError" role="alert"></p>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <p class="error" id="emailError" role="alert"></p>
+
+        <label for="message">Message <span class="count" id="count-msg">0/300</span></label>
+        <textarea id="message" name="message" rows="5" maxlength="300" required></textarea>
+        <p class="error" id="messageError" role="alert"></p>
+
+        <button class="btn" type="submit">Send message</button>
+        <p class="status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><p>&copy; <span id="year"></span> Your Name</p></footer>
+  <button class="to-top" id="toTop" aria-label="Back to top" hidden>Top</button>
+
+  <dialog id="projectDialog" aria-labelledby="dialogTitle">
+    <h3 id="dialogTitle"></h3>
+    <p id="dialogBody"></p>
+    <p><a id="dialogLink" href="#" target="_blank" rel="noopener">View project (opens in a new tab)</a></p>
+    <button class="btn" id="dialogClose">Close</button>
+  </dialog>
+</body>
+</html>
