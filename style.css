@@ -3,9 +3,9 @@
   --bg: #f3f5f2;
   --surface: #ffffff;
   --text: #1c2522;
-  --muted: #4d5a55;
-  --accent: #0f5c4d;     /* deep green ink */
-  --accent-2: #e0a526;   /* saffron highlight */
+  --muted: #413c47;
+  --accent: #7613b4;     /* purple highlight */
+  --accent-2: #cc67f4;   /* saffron highlight */
   --line: #cfd8d3;
   --radius: 6px;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -16,7 +16,7 @@
   --surface: #1d2623;
   --text: #e9efec;
   --muted: #a9b8b1;
-  --accent: #6fd3b8;
+  --accent: #a353d8;
   --line: #34423d;
 }
 
@@ -74,7 +74,14 @@ p { max-width: 65ch; }
 
 /* ===== About ===== */
 .about { display: grid; gap: 2rem; grid-template-columns: 1fr; }
-.avatar { width: 9rem; color: var(--accent); }
+.avatar {
+  width: 9rem;
+  height: 9rem;          /* a circle shape */
+  border-radius: 50%;    /* makes it round */
+  object-fit: cover;     /* crops a photo */
+  color: var(--accent);
+  border: 3px solid var(--accent-2);
+}
 .skills { list-style: none; padding: 0; }
 .skills li { display: grid; grid-template-columns: 7rem 1fr; align-items: center; margin-bottom: .5rem; }
 .bar { background: var(--line); height: .6rem; border-radius: 99px; overflow: hidden; }

@@ -46,7 +46,7 @@ function initTheme() {
 /* 3. Typing effect in the hero (static text if reduced motion is on) */
 function initTyping() {
   const target = $("#typed");
-  const words = ["student developer", "problem solver", "lifelong learner"]; // edit these
+  const words = ["Network student", "HTML/CSS learner", "Future Developer"]; // the animation words loop
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) { target.textContent = words[0]; return; }
   let w = 0, i = 0, deleting = false;
   (function tick() {
