@@ -34,7 +34,7 @@ function initTheme() {
   });
 }
 
-/* 3. Typing effect (static text if reduced motion is on) */
+/* 3. Typing effect */
 function initTyping() {
   const target = $("#typed");
   const words = ["Network student", "HTML/CSS learner", "Future Developer"]; // the animation words loop
@@ -152,7 +152,7 @@ function initCopyEmail() {
   });
 }
 
-/* 12. Contact form: validation, character counter, front-end only "send" */
+/* 12. Contact form: validation, character counter, front-end */
 function initForm() {
   const form = $("#contactForm"), status = $("#formStatus"), msg = $("#message");
   const rules = {
@@ -173,11 +173,11 @@ function initForm() {
     const fields = $$("input, textarea", form);
     const valid = fields.map(check).every(Boolean); // run every check so all errors show
     if (!valid) { status.textContent = "Please fix the errors above."; fields.find(f => f.getAttribute("aria-invalid") === "true").focus(); return; }
-    // Front-end only: build a mailto link so the visitor's email app opens.
+    // Email visitor email app opens navigation.
     const subject = encodeURIComponent("Portfolio message from " + form.name.value);
     const body = encodeURIComponent(form.message.value + "\n\n" + form.email.value);
     location.href = `mailto:${$("#emailLink").textContent}?subject=${subject}&body=${body}`;
-    status.textContent = "Thanks! Your email app should open with the message ready to send.";
+    status.textContent = "Thank you! Your email app should open with the message ready to send.";
     form.reset();
     $("#count-msg").textContent = "0/300";
   });
