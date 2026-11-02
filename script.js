@@ -4,15 +4,6 @@
 const $ = (selector, parent = document) => parent.querySelector(selector);
 const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
 
-/* Replace with your real projects (shown in the Details dialog). */
-const PROJECTS = [
-  { title: "Project One", body: "Longer description: goal, tools used, what you learned.", url: "https://example.com" },
-  { title: "Project Two", body: "Longer description: goal, tools used, what you learned.", url: "https://example.com" },
-  { title: "Project Three", body: "Longer description: goal, tools used, what you learned.", url: "https://example.com" },
-  { title: "Project Four", body: "Longer description: goal, tools used, what you learned.", url: "https://example.com" },
-  { title: "Project Five", body: "Longer description: goal, tools used, what you learned.", url: "https://example.com" }
-];
-
 /* 1. Mobile menu toggle (closes after a link is chosen) */
 function initMobileNav() {
   const btn = $("#navToggle"), links = $("#navLinks");
