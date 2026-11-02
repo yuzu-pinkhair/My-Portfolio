@@ -16,7 +16,7 @@ function initMobileNav() {
   });
 }
 
-/* 2. Dark/light theme, remembered with localStorage (guarded in case storage is blocked) */
+/* 2. Dark/light theme */
 function initTheme() {
   const btn = $("#themeToggle");
   const apply = theme => {
@@ -34,7 +34,7 @@ function initTheme() {
   });
 }
 
-/* 3. Typing effect in the hero (static text if reduced motion is on) */
+/* 3. Typing effect (static text if reduced motion is on) */
 function initTyping() {
   const target = $("#typed");
   const words = ["Network student", "HTML/CSS learner", "Future Developer"]; // the animation words loop
